@@ -31,7 +31,7 @@
 -->
 </form>
 
-<h3 class="serviceDisplay" ng-bind="model.currentService.name"></h3>
+<h3 class="serviceDisplay" ng-bind="model.currentService.name" ng-show="model.results.length > 0"></h3>
 <p ng-show="model.message.length > 0" ng-bind="model.message"></p>
 
 <bar-chart
