@@ -12,11 +12,6 @@
 
 	</head>
 	<body ng-show="main.showApp">
-		<section id="TopNav">
-			<ul class="topNavList">
-				<li><a ng-click="main.logout()">Logout</a></li>
-			</ul>
-		</section>
 		<section id="NavSection" ng-controller="NavCtrl as nav">
 			<ul class="navList">
 				<li ng-repeat="navItem in nav.items"><a ng-href="#/{{navItem.link}}" ng-bind="navItem.name"></a></li>
