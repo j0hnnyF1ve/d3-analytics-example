@@ -22,7 +22,7 @@
 	<section class="controls">
 		<button ng-click="loadService(model.currentService.value)">Update</button>
 		<a ng-class="{bold: model.barChart}" ng-click="showBarChart()">Bar Chart</a>
-		<a ng-class="{bold: model.lineChart}" ng-click="showLineChart()">Line Chart</a>
+<!--		<a ng-class="{bold: model.lineChart}" ng-click="showLineChart()">Line Chart</a> -->
 	</section>
 <!--
   <section>
@@ -41,7 +41,7 @@
 	margin="20"
 	data="model.chartResults"></bar-chart>
 
-<line-chart 
+<line-chart
 	class="chart ng-hide" ng-show="isLineChartVisible()"
 	margin="40"
 	y-label="{{model.currentService.name}}"
