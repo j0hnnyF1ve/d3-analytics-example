@@ -1,0 +1,66 @@
+<form id="SampleForm" name="SampleForm">
+	<legend>Sample Analytics</legend>
+	<section class="startDate">
+		<label>Start</label>
+		<input type="text"
+			datepicker-popup="MM/dd/yyyy"
+			max="model.dateMax"
+			ng-model="model.start" />
+	</section>
+	<section class="endDate">
+		<label>End</label>
+		<input type="text"
+			datepicker-popup="MM/dd/yyyy"
+			max="model.dateMax"
+			ng-model="model.end" />
+	</section>
+	<section class="service">
+		<label>Choose:</label>
+		<select ng-model="model.currentService" ng-disabled="isServiceDropdownDisabled()" ng-options="service.name for service in model.services">
+		</select>
+	</section>
+	<section class="controls">
+		<button ng-click="loadService(model.currentService.value)">Update</button>
+		<a ng-class="{bold: model.barChart}" ng-click="showBarChart()">Bar Chart</a>
+		<a ng-class="{bold: model.lineChart}" ng-click="showLineChart()">Line Chart</a>
+	</section>
+<!--
+  <section>
+      <button ng-click="downloadAsCSV(model.currentService.value)">Download as CSV</button>
+  </section>
+-->
+</form>
+
+<h3 class="serviceDisplay" ng-bind="model.currentService.name"></h3>
+<p ng-show="model.message.length > 0" ng-bind="model.message"></p>
+
+<bar-chart
+	class="chart ng-hide" ng-show="isBarChartVisible()"
+	bar-height="20"
+	bar-padding="2"
+	margin="20"
+	data="model.chartResults"></bar-chart>
+
+<line-chart 
+	class="chart ng-hide" ng-show="isLineChartVisible()"
+	margin="40"
+	y-label="{{model.currentService.name}}"
+	data="model.chartResults"></line-chart>
+
+
+<table class="ng-hide" id="Results" ng-show="model.results">
+	<thead>
+		<tr>
+			<th>Org</th>
+			<th>Name</th>
+			<th>Value</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr ng-class-odd="'alt'" ng-repeat="data in model.results">
+			<td ng-bind="data.org"></td>
+			<td ng-bind="data.name"></td>
+			<td ng-bind="data.value"></td>
+		</tr>
+	</tbody>
+</table>

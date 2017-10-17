@@ -1,0 +1,52 @@
+html, body { margin: 0; padding: 0; }
+
+#TopNav .topNavList { text-align: right; }
+#TopNav .topNavList li { list-style-type: none; }
+#TopNav .topNavList li a:hover { cursor: pointer; }
+
+#NavSection .navList { padding: 0; margin: 0 0 0 15px;}
+#NavSection .navList li { background-color: #3c78b4; display: inline-block; list-style-type: none; margin-right: 15px; padding: 5px; border-radius: 5px;}
+#NavSection .navList li a { color: #fff; }
+
+#Content { padding: 10px; }
+
+#DailyReportForm { border: 1px solid #e5e5e5; padding: 10px; }
+#SearchForm { border: 1px solid #e5e5e5; padding: 10px; }
+#TagsForm { border: 1px solid #e5e5e5; padding: 10px; }
+#ChannelsForm { border: 1px solid #e5e5e5; padding: 10px; }
+#ClipsForm { border: 1px solid #e5e5e5; padding: 10px; }
+
+section { display: block; margin: 0px 0 5px;}
+section label { min-width: 70px;}
+
+section.stations label.station { min-width: initial; margin-right: 5px; }
+section.stations a:hover,
+section.controls a:hover { cursor: pointer; }
+
+select:disabled { background-color: #fcc; }
+
+#Results { border: solid 1px #35f; padding: 10px; }
+#Results thead tr th { background-color: #33f; color: #fff; padding: 5px; }
+#Results tbody tr { background-color: #fff; color: #000; }
+#Results tbody tr.alt { background-color: #eef; color: #000; }
+#Results tbody tr td { padding: 5px; min-width: 150px; }
+
+.bold { font-weight: 800;}
+.serviceDisplay { text-transform: capitalize; }
+
+
+
+.chart.ng-hide { display: block !important; visibility: hidden; position: absolute; top: 0; z-index: 0; width: 100%; }
+
+.axis path,
+.axis line {
+  fill: none;
+  stroke: #000;
+  shape-rendering: crispEdges;
+}
+
+.line {
+  fill: none;
+  stroke: steelblue;
+  stroke-width: 2px;
+}

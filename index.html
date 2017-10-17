@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html ng-app="AnalyticsApp" ng-controller="MainCtrl as main" ng-cloak ng-init="main.showApp = true">
+	<head>
+		<title ng-bind="'Analytics'"></title>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:100|Lato:300|Lato:400|Lato:700|Lato:900|Lato:100italic|Lato:300italic|Lato:400italic|Lato:700italic|Lato:900italic|Muli:400" media="all">
+
+		<link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+		<link rel="stylesheet" href="css/styles.css">
+
+	</head>
+	<body ng-show="main.showApp">
+		<section id="TopNav">
+			<ul class="topNavList">
+				<li><a ng-click="main.logout()">Logout</a></li>
+			</ul>
+		</section>
+		<section id="NavSection" ng-controller="NavCtrl as nav">
+			<ul class="navList">
+				<li ng-repeat="navItem in nav.items"><a ng-href="#/{{navItem.link}}" ng-bind="navItem.name"></a></li>
+			</ul>
+		</section>
+		<div id="Content" ng-view>
+		</div> <!-- END CONTENT -->
+
+		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+
+		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.1/angular.js"></script>
+		<script type="text/javascript" src="https://angular-ui.github.io/bootstrap/ui-bootstrap-tpls-0.10.0.js"></script>
+
+		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.1/angular-route.js"></script>
+		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.1/angular-animate.js"></script>
+
+		<script type="text/javascript" src="/analytics/lib/D3module.js"></script>
+
+		<script type="text/javascript" src="/analytics/app/AnalyticsApp.js"></script>
+		<script type="text/javascript" src="/analytics/app/controllers.js"></script>
+
+		<script type="text/javascript" src="/analytics/app/services/AppState.js"></script>
+		<script type="text/javascript" src="/analytics/app/services/AnalyticsAPIs.js"></script>
+
+		<script type="text/javascript" src="/analytics/app/pages/example/controller.js"></script>
+
+		<script type="text/javascript" src="/analytics/app/chartTypes/barChart/barChart.js"></script>
+		<script type="text/javascript" src="/analytics/app/chartTypes/barChart/barChartModule.js"></script>
+		<script type="text/javascript" src="/analytics/app/chartTypes/lineChart/lineChart.js"></script>
+		<script type="text/javascript" src="/analytics/app/chartTypes/lineChart/lineChartModule.js"></script>
+		<script type="text/javascript" src="/analytics/app/chartTypes/pieChart/pieChart.js"></script>
+		<script type="text/javascript" src="/analytics/app/chartTypes/pieChart/pieChartModule.js"></script>
+
+	</body>
+</html>
